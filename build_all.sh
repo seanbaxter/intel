@@ -13,3 +13,6 @@ circle enum3.cxx && ./enum3
 circle enum4.cxx && ./enum4
 circle enum5.cxx && ./enum5
 
+# shader stuff
+circle -shader -emit-spirv -c shuffle.cxx -E comp && spirv-dis shuffle.spv | grep Shuffle
+circle -shader -emit-spirv -c shader.cxx -E vert && spirv-dis shader.spv
