@@ -1,3 +1,5 @@
+// Check me out at https://github.com/seanbaxter/intel
+
 #include <iostream>
 
 int main() {
