@@ -42,28 +42,7 @@ enum typename unique_list_t {
   @pack_type(types)...;
 };
 
-// We can also sort the type lexicographically by their string representations.
-enum typename sorted_list_t {
-  // Expand the string spellings of the types into an array, along with the
-  // index into the type.
-  @meta std::array types {
-    std::make_pair<std::string, int>( 
-      @enum_type_strings(typelist_t),
-      int...
-    )...
-  };
-
-  // Lexicographically sort the types.
-  @meta std::sort(types.begin(), types.end());
-
-  // Gather the types and define enumerators.
-  @enum_type(typelist_t, @pack_nontype(types).second) ...;
-};
-
 int main() {
   std::cout<< "unique_list_t:\n";
   std::cout<< int...<< ": "<< @enum_type_strings(unique_list_t)<< "\n"...;
-
-  std::cout<< "\nsorted_list_t:\n";
-  std::cout<< int...<< ": "<< @enum_type_strings(sorted_list_t)<< "\n"...;
 }

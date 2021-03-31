@@ -13,6 +13,17 @@ circle enum3.cxx && ./enum3
 circle enum4.cxx && ./enum4
 circle enum5.cxx && ./enum5
 
+# dynamic packs
+circle pack1.cxx && ./pack1
+circle pack2.cxx && ./pack2
+circle pack3.cxx && ./pack3
+circle pack4.cxx && ./pack4
+circle pack5.cxx && ./pack5
+
+# universal member access
+circle member1.cxx && ./member1
+circle member2.cxx && ./member2
+
 # shader stuff
 circle -shader -emit-spirv -c shuffle.cxx -E comp && spirv-dis shuffle.spv | grep Shuffle
 circle -shader -emit-spirv -c shader.cxx -E vert && spirv-dis shader.spv
